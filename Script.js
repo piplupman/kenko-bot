@@ -10,9 +10,9 @@ const { DateTime } = require("luxon");
 
   const page = await browser.newPage();
   // 以下の三行は自分で入力
-  const username = "ユーザーID（半角）";
-  const password = "パスワード（半角）";
-  const location = "居住地（全角可）";
+  const username = "69221";
+  const password = "69221FKmr";
+  const location = "宮崎市";
 
   const targetUrl = "https://kenko:kenko-cac@ems4.kouku-dai.ac.jp/~take/kenko/";
 
@@ -47,7 +47,7 @@ const { DateTime } = require("luxon");
   await page.click('input[name="toi0"][value="1"]');
 
   // 体温
-  const temp = (Math.floor(Math.random() * 5) + 2) / 10 + 36.0;
+  const temp = (Math.floor(Math.random() * 3) + 2) / 10 + 36.4;
   const [intPart, decimalPart] = temp.toFixed(1).split(".");
   await page.evaluate((intPart, decimalPart) => {
     const temp1 = document.querySelector("#temp1");
